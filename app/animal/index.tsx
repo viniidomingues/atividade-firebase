@@ -19,12 +19,14 @@ import useAuth from "../../firebase/hooks/useAuth";
 import useCollection from "../../firebase/hooks/useCollection";
 import Animal from "../../types/Pets";
 import Header from "../../components/ui/Header";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Cars() {
     const { showActionSheetWithOptions } = useActionSheet();
     const { logout } = useAuth();
     const { data, create, remove, refreshData, loading } = useCollection<Animal>("animais");
-
+    const { themeStyles, toggleTheme } = useTheme();
+    
     const quandoDeslogar = async () => {
         const options = ['Logout', 'Cancelar']; 
         const destructiveButtonIndex = 0;
@@ -107,7 +109,7 @@ export default function Cars() {
             <Header onPress={quandoDeslogar} />
             <Stack.Screen options={{ headerShown: false }} />
             <View style={styles.scrollViewContent}>
-                <View style={styles.formContainer}>
+                <View style={[styles.formContainer, { backgroundColor: themeStyles.backgroundColor }]}>
                     <TextInput
                         style={styles.input}
                         value={forms.type}
@@ -180,7 +182,6 @@ const styles = StyleSheet.create({
     },
     formContainer: {
         width: '100%',
-        backgroundColor: '#f8f8f8',
         borderRadius: 10,
         padding: 20,
         marginBottom: 20,

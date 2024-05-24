@@ -7,6 +7,7 @@ type BotaoProps = TouchableOpacityProps & {
 };
 
 const MenuHamburguer: React.FC<BotaoProps> = ({ onPress }) => {
+
     return (
         <TouchableOpacity onPress={onPress}>
             <Ionicons  name="menu" size={40} color="#ffffff" onPress={onPress} />
