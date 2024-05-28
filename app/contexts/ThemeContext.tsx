@@ -2,15 +2,19 @@
 import React, { createContext, useState, useContext, PropsWithChildren } from 'react';
 
 const lightTheme = {
+  backgroundColorFull: '#5d5555',
   backgroundColor: '#ffffff',
   textColor: '#000000',
   buttonColor: '#6200ee',
+  headerColor: '#008080'
 };
 
 const darkTheme = {
+  backgroundColorFull:'#ded4d4',
   backgroundColor: '#000000',
   textColor: '#ffffff',
   buttonColor: '#bb86fc',
+  headerColor: '#000000'
 };
 
 const themes = {

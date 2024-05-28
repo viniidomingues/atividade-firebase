@@ -13,12 +13,13 @@ import Botao from "../components/ui/botao";
 import { router } from "expo-router";
 import { ActionSheetProvider } from '@expo/react-native-action-sheet';
 import useAuth from "../firebase/hooks/useAuth";
+import { useTheme } from "./contexts/ThemeContext";
 
 export default function Index() {
     const { user, login, loading } = useAuth();
     const [email, setEmail] = useState("teste@gmail.com");
     const [password, setPassword] = useState("123456");
-
+const {themeStyles} = useTheme();
     useEffect(() => {
         if (user) {
             router.replace("/animal/");
@@ -34,9 +35,9 @@ export default function Index() {
     );
 
     return (
-        <ActionSheetProvider>
-            <FullScreen>
-                <View style={styles.container}>
+        <ActionSheetProvider >
+            <FullScreen >
+                <View style={[styles.container, { backgroundColor: themeStyles.backgroundColor }]}>
                     <Logo />
                     <View style={styles.inputContainer}>
                         <Text style={styles.label}>Usuário</Text>

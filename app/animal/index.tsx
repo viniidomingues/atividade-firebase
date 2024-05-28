@@ -133,7 +133,7 @@ export default function Cars() {
                         onPress={quandoSalvar}
                         style={styles.button}
                     >
-                        <Text style={styles.buttonText}>Cadastrar novo animal</Text>
+                        <Text style={[styles.buttonText,{color:themeStyles.textColor}]}>Cadastrar novo animal</Text>
                     </TouchableOpacity>
                 </View>
                 {loading ? (
@@ -204,7 +204,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     buttonText: {
-        color: '#fff',
         textAlign: 'center',
         fontSize: 16,
     },
