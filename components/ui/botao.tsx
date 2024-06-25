@@ -8,7 +8,7 @@ type BotaoProps = TouchableOpacityProps & {
 
 const Botao: React.FC<BotaoProps> = ({ onPress }) => {
     return (
-        <TouchableOpacity style={styles.button} onPress={onPress}>
+        <TouchableOpacity style={styles.button} onPress={onPress} testID="teste-botao">
             <Image 
                 source={require("../../assets/images/entrar.gif")}
                 style={styles.image}

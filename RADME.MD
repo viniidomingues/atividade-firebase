@@ -1,21 +1,5 @@
-# REQUISITOS
+testes unitários verificam apenas uma parte do código para garantir que vai funcionar de forma isolada sem depender de nenhum outro componente
+exemplo testar uma função que calcula 1 + 1 e vendo se o resultado vai ser 2
 
-## Estrutura do Projeto:
-* Foi utilizado o `yarn create expo --template` para criar a estrutura do projeto e utilizado do padrão de pastas visto em aula.
-
-## Componentes:
-* Todos os arquivos de componentes são do tipo função;
-* Foram criados alguns componentes para serem utilizados em mais de uma tela, como o `Header` e `FullScreen`.
-
-## Styles e Layouts: 
-* Foram criadas uma logo e uma sub-logo próprias;
-* Escolhida uma paleta de cores própria e minimalista;
-
-## Componentes 1:
-* Foram cumpridas as solicitação do cliente, por exemplo, não deixando a senha aparecer e o button de entrar sendo uma imagem.
-
-## Componentes 2 (Listas):
-* Foi baixado o arquivo data.ts na pasta service e renderiazada a lista de carros depois de terem passado por um helper.
-
-## ActionSheet:
-* Foi criado um menu hamburguer com o ActionSheet.
+testes end-to-end simulam o fluxo real da aplicação dando input nos campos e executando como se fosse um usuário normal, para garantir o funcionamento
+exemplo testar o fluxo completo de login em um aplicativo
